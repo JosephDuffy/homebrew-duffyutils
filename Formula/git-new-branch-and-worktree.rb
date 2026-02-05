@@ -6,11 +6,15 @@ class GitNewBranchAndWorktree < Formula
   version "0.0.1"
   head "https://github.com/JosephDuffy/DuffyUtils.git", branch: "main"
 
-  depends_on xcode: ["16.0", :build]
-  depends_on :macos
+  uses_from_macos "swift" => :build
 
   def install
-    system "swift", "build", "-c", "release", "--product", "git-new-branch-and-worktree", "--disable-sandbox"
+    args = if OS.mac?
+      ["--disable-sandbox"]
+    else
+      ["--static-swift-stdlib"]
+    end
+    system "swift", "build", *args, "-c", "release", "--product", "git-new-branch-and-worktree"
     bin.install ".build/release/git-new-branch-and-worktree"
   end
 
