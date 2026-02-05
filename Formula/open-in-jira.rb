@@ -1,5 +1,5 @@
-class GitNewBranchAndWorktree < Formula
-  desc "Create a new git branch and worktree"
+class OpenInJira < Formula
+  desc "Open the Jira ticket for the current git branch"
   homepage "https://github.com/JosephDuffy/DuffyUtils"
   url "https://github.com/JosephDuffy/DuffyUtils/archive/refs/tags/v0.1.0.tar.gz"
   sha256 "2a7a0ee09290a559b9212599e0a2ed05a5ee035e39443ce7836be393967ceebb"
@@ -14,11 +14,11 @@ class GitNewBranchAndWorktree < Formula
     else
       ["--static-swift-stdlib"]
     end
-    system "swift", "build", *args, "-c", "release", "--product", "git-new-branch-and-worktree"
-    bin.install ".build/release/git-new-branch-and-worktree"
+    system "swift", "build", *args, "-c", "release", "--product", "open-in-jira"
+    bin.install ".build/release/open-in-jira"
   end
 
   test do
-    system bin/"git-new-branch-and-worktree", "--help"
+    system bin/"open-in-jira", "--help"
   end
 end
