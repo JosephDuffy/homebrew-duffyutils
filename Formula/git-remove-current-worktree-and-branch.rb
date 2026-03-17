@@ -1,9 +1,9 @@
 class GitRemoveCurrentWorktreeAndBranch < Formula
   desc "Remove the current worktree and its associated branch"
   homepage "https://github.com/JosephDuffy/DuffyUtils"
-  url "https://github.com/JosephDuffy/DuffyUtils/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "2a7a0ee09290a559b9212599e0a2ed05a5ee035e39443ce7836be393967ceebb"
-  version "0.1.0"
+  url "https://github.com/JosephDuffy/DuffyUtils/archive/refs/tags/v0.1.1.tar.gz"
+  sha256 "893f1eab204a35fbdbc0b71d44d408efce8af0af98ff2c81d5a241495eaae306"
+  version "0.1.1"
   head "https://github.com/JosephDuffy/DuffyUtils.git", branch: "main"
 
   uses_from_macos "swift" => :build
